@@ -4,24 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 
     <title>Classificação de Imagens de Frutas</title>
     <!-- Adicione aqui links para seus arquivos CSS, fontes, etc. -->
 </head>
 
 <body>
-    <header>
-        <h1>Classificação de Imagens de Frutas</h1>
+
+    <div class="board">
+        <button class="button-sobre">Sobre ❔</button>
+        <img class="icon-classi" src="https://cdn-icons-png.flaticon.com/512/1475/1475957.png"></img>
+    </div>
+    <header class="header-fruit">
+        </h1>
     </header>
 
     <main>
         <section>
-            <h2>Faça Upload de uma Imagem de Fruta</h2>
-            <form id="uploadForm" enctype="multipart/form-data">
+            <h2 class="h-upload">Faça Upload de uma Imagem de Fruta 🍒</h2>
+            <form class="form-upload" id="uploadForm" enctype="multipart/form-data">
                 <input type="file" name="image" accept="image/*" required>
-                <button type="submit">Enviar</button>
+                <button class="button-sub" type="submit">Enviar</button>
             </form>
+
+            <div class="square-img"></div>
+
         </section>
 
         <section id="resultSection" style="display: none;">
@@ -31,12 +42,12 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Sua Empresa</p>
+    <footer class="footer-back">
+        <p>&copy; 2024 Classificação da fruta</p>
     </footer>
 
-    <!-- Adicione aqui seus scripts JavaScript -->
-    <script src="seu-script.js"></script>
+
+    <script src=".js"></script>
 </body>
 
 </html>
