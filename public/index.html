@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/styles/main.css">
+
+
+    <title>Classificação de Imagens de Frutas</title>
+
+    <link rel="stylesheet" href="../src/styles/main.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-
-    <title>Classificação de Imagens de Frutas</title>
-    <!-- Adicione aqui links para seus arquivos CSS, fontes, etc. -->
 </head>
 
 <body>
@@ -27,11 +29,12 @@
         <section>
             <h2 class="h-upload">Faça Upload de uma Imagem de Fruta 🍒</h2>
             <form class="form-upload" id="uploadForm" enctype="multipart/form-data">
-                <input type="file" name="image" accept="image/*" required>
+                <input type="file" name="image" id="imageInput" accept="image/*" required>
+
                 <button class="button-sub" type="submit">Enviar</button>
             </form>
 
-            <div class="square-img"></div>
+            <div class="square-img" id="imageContainer"></div> <!-- Adicione um ID à div onde a imagem será exibida -->
 
         </section>
 
@@ -47,7 +50,7 @@
     </footer>
 
 
-    <script src=".js"></script>
+    <script src="/src/main.js"></script>
 </body>
 
 </html>
