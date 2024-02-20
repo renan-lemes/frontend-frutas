@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 
 require("dotenv").config();
+require("./src/bs.js")
 
 // Define o diretório onde estão os arquivos estáticos (CSS, JavaScript, imagens, etc.) 
 app.use(express.static(path.join(__dirname, 'public')));
