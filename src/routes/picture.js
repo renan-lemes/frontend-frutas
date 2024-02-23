@@ -9,6 +9,6 @@ router.post("/", upload.single("file"), PictureController.create);
 
 router.get("/", PictureController.findAll);
 
-router.delete("/:id", PictureController.remove);
+router.delete("/delete/:id", PictureController.deleteOne);
 
 module.exports = router;
