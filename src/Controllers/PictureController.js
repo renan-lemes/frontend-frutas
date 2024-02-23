@@ -74,7 +74,7 @@ exports.remove = async (req, res) => {
 
 exports.deleteOne = async (req, res) => {
     const id = req.params.id
-    const src = await Picture.findById(id).src
+    const obj = await Picture.findById(id)
 
     try {
 
@@ -86,7 +86,7 @@ exports.deleteOne = async (req, res) => {
 
         res.json({ message: "Imagem removida com sucesso!" })
 
-        fs.unlinkSync(src)
+        fs.unlinkSync(obj.src)
 
     } catch (error) {
         console.error("Erro ao excluir imagem: ", error)
