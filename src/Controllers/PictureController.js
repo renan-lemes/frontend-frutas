@@ -47,17 +47,27 @@ exports.remove = async (req, res) => {
 
         const picture = await Picture.findById(req.params.id)
 
-        if (!picture) {
-            return res.status(404).json({ message: "Imagem não encontrada!" })
-        }
+        console.log("Tipo de picture:", typeof (picture))
+        console.log(picture.id)
+        // if (!picture) {
+        //     return res.status(404).json({ message: "Imagem não encontrada!" })
+        // }
 
-        fs.unlinkSync(picture.src) // e aqui remove o arquivo da pasta
+        //fs.unlinkSync(picture.src) // e aqui remove o arquivo da pasta
 
         await picture.remove(); // remove do banco de dados o registro
 
         res.json({ message: "Imagem removida com sucesso!" })
 
     } catch (error) {
-        res.status(500).json({ message: "Erro ao excluir imagem!" })
+
+        // const picture = await Picture.findById(req.params.id)
+
+        // picture.remove()
+
+        // console.log("Tipo de picture:", typeof (picture))
+
+        res.status(500).json({ message: `Erro ao excluir imagem erro ${error}!` })
+
     }
 };
