@@ -71,3 +71,27 @@ exports.remove = async (req, res) => {
 
     }
 };
+
+exports.deleteOne = async (req, res) => {
+    const id = req.params.id
+    const src = await Picture.findById(id).src
+
+    try {
+
+        const picture = await Picture.findByIdAndDelete(id)
+
+        if (!picture) {
+            return res.status(404).json({ message: "Imagem não encontrada!" })
+        }
+
+        res.json({ message: "Imagem removida com sucesso!" })
+
+        fs.unlinkSync(src)
+
+    } catch (error) {
+        console.error("Erro ao excluir imagem: ", error)
+        res.status(500).json({ message: "Erro ao excluir imagem!" })
+    }
+
+
+};
